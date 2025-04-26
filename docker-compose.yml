@@ -1,0 +1,12 @@
+version: '3'
+services:
+  vue3-app:
+    build: .
+    ports:
+      - "8081:80"
+    networks:
+      - ai_poll_backend_poll-net
+    restart: always
+networks:
+  ai_poll_backend_poll-net:
+    external: true  # 使用后端已创建的网络
